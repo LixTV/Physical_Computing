@@ -4,6 +4,10 @@ from MPU6050 import MPU6050
 
 firmware_url = "https://raw.githubusercontent.com/LixTV/Physical_Computing/main/"
 
+ota_updater = OTAUpdater(SSID, PASSWORD, firmware_url, "test.py")
+ota_updater.download_and_install_update_if_available()
+
+
 import time
 import random
 import machine
