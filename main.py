@@ -127,11 +127,24 @@ print("Drücke Ctrl+C zum Beenden")
 try:
     while True:
 
-    
+        #Fläche1
         pixel.set_pixel(cube_C1[0][3][3], (0, 0, 255))
         pixel.set_pixel(cube_C1[0][3][4], (0, 0, 255))
         pixel.set_pixel(cube_C1[0][4][3], (0, 0, 255))
         pixel.set_pixel(cube_C1[0][4][4], (0, 0, 255))
+
+        #Fläche2
+        pixel.set_pixel(cube_C1[1][2][2], (0, 0, 255))
+        pixel.set_pixel(cube_C1[1][2][3], (0, 0, 255))
+        pixel.set_pixel(cube_C1[1][2][4], (0, 0, 255))
+        pixel.set_pixel(cube_C1[1][2][5], (0, 0, 255))
+
+        pixel.set_pixel(cube_C1[1][4][2], (0, 0, 255))
+        pixel.set_pixel(cube_C1[1][4][3], (0, 0, 255))
+        pixel.set_pixel(cube_C1[1][4][4], (0, 0, 255))
+        pixel.set_pixel(cube_C1[1][4][5], (0, 0, 255))
+
+        #Fläche3
 
         
         # Beschleunigungsdaten lesen (wie in lage.py - funktioniert!)
