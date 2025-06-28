@@ -33,7 +33,7 @@ except Exception as e:
 def wurfel_create(flaeche,pos_wurf_x,pos_wurf_y):
         for x in range(2):
             for y in range(2):
-                pixel.set_pixel(cube_C1[flaeche][pos_wurf_x+x][pos_wurf_y+y], (0, 0, 255))
+                pixel.set_pixel(cube[flaeche][pos_wurf_x+x][pos_wurf_y+y], (0, 0, 255))
         
           
 def wurfel_anzeige():
@@ -71,7 +71,7 @@ CLEAR = (0, 0, 0)  # Aus/Leer
 DELAY = 1  # Spielgeschwindigkeit in Sekunden
 THRESH = 0.4  # Sensor Schwellwert
 NUM_FRUITS = 10  # Anzahl Früchte
-NUMPIXELS = 384  # Gesamtzahl LEDs (3 Seiten × 8×8)
+NUMPIXELS = 192  # Gesamtzahl LEDs (3 Seiten × 8×8)
 
 # NeoPixel Setup (verwende deine neopixel.py Bibliothek)
 pixel = Neopixel(NUMPIXELS, 0, PIXEL_PIN, "RGB")
@@ -82,7 +82,7 @@ print(f"LEDs: {NUMPIXELS}, Früchte: {NUM_FRUITS}")
 
 # WÜRFEL MATRIX [Seitenfläche][X-Koordinate][Y-Koordinate]
 cube_C1 = [[[0 for y in range(8)] for x in range(8)] for f in range(3)]
-cube=[[[0 for y in range(8)] for x in range(8)] for f in range(6)]
+cube = [[[0 for y in range(8)] for x in range(8)] for f in range(6)]
 counter = 0
 seite = 0
 
@@ -101,22 +101,40 @@ for y in range(8):
             cube_C1[seite][x % 8][y] = cube_C1[seite][x % 8][y-1] + 48 - 1 - 2*x
         counter = counter + 1
 
-
-
-for y in range(8):
-    for x in range(24):
-        if x < 8:
-            seite = 0
-        elif x < 16:
-            seite = 1
-        else:
-            seite = 2
+#cube inizilize
+counter_cube = 0
+for c in range(2):
+    if c==0:
+        for y in range(8):
+            for x in range(24):
+                if x < 8:
+                    seite = 0
+                elif x < 16:
+                    seite = 1
+                else:
+                    seite = 2
         
-        if y % 2 == 0:
-            cube_C1[seite][x % 8][y] = counter
-        else:
-            cube_C1[seite][x % 8][y] = cube_C1[seite][x % 8][y-1] + 48 - 1 - 2*x
-        counter = counter + 1
+                if y % 2 == 0:
+                    cube[seite][x % 8][y] = counter_cube
+                else:
+                    cube[seite][x % 8][y] = cube[seite][x % 8][y-1] + 48 - 1 - 2*x
+                counter_cube = counter_cube + 1
+    if c==1:
+        for y in range(8):
+            for x in range(24):
+                if x < 8:
+                    seite = 5
+                elif x < 16:
+                    seite = 4
+                else:
+                    seite = 6
+        
+                if y % 2 == 0:
+                    cube[seite][x % 8][y] = counter_cube
+                else:
+                    cube[seite][x % 8][y] = cube[seite][x % 8][y-1] + 48 - 1 - 2*x
+                counter_cube = counter_cube + 1
+
 
 print("LED-Würfel Matrix initialisiert")
 
