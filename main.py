@@ -28,6 +28,28 @@ except Exception as e:
 
 #___________________________Funktionen____________________________
 
+#Wurfel Seitenanzeige
+
+def wurfel_create(flaeche,pos_wurf_x,pos_wurf_y):
+        for x in range(2):
+            for y in range(2):
+                pixel.set_pixel(cube_C1[flaeche][pos_wurf_x+x][pos_wurf_y+y], (0, 0, 255))
+        
+          
+def wurfel_anzeige():
+    #Fläche 1
+    wurfel_create(0,3,3)
+    #Fläche 2
+    wurfel_create(1,0,0)
+    wurfel_create(1,6,6)
+    #Fläche 3
+    wurfel_create(2,0,0)
+    wurfel_create(2,3,3)
+    wurfel_create(2,6,6)
+    
+        
+
+
 #___________generate Fruit________________    
 def generate_fruit_position(snake, NUMPIXELS):
     attempts = 0
@@ -126,8 +148,15 @@ print("Drücke Ctrl+C zum Beenden")
 # Hauptspiel-Loop
 try:
     while True:
-
+        wurfel_anzeige()
+        """
         #Fläche1
+        for x in range(2):
+            for y in range(2):
+                pixel.set_pixel(cube_C1[0][x][y], (0, 0, 255))
+        
+                
+                
         pixel.set_pixel(cube_C1[0][3][3], (0, 0, 255))
         pixel.set_pixel(cube_C1[0][3][4], (0, 0, 255))
         pixel.set_pixel(cube_C1[0][4][3], (0, 0, 255))
@@ -145,7 +174,7 @@ try:
         pixel.set_pixel(cube_C1[1][4][5], (0, 0, 255))
 
         #Fläche3
-
+        """
         
         # Beschleunigungsdaten lesen (wie in lage.py - funktioniert!)
         accel_values = lsm.accel()
