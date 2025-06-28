@@ -38,14 +38,59 @@ def wurfel_create(flaeche,pos_wurf_x,pos_wurf_y):
           
 def wurfel_anzeige():
     #Fläche 1
+    #mitte
     wurfel_create(0,3,3)
+    
     #Fläche 2
+    #l u
     wurfel_create(1,0,0)
+    #r o
     wurfel_create(1,6,6)
+    
     #Fläche 3
+    #l u
     wurfel_create(2,0,0)
+    #m
     wurfel_create(2,3,3)
+    #r o
     wurfel_create(2,6,6)
+
+    #Fläche 4
+    #l u
+    wurfel_create(2,0,0)
+    #l o
+    wurfel_create(2,0,6)
+    #r u
+    wurfel_create(2,6,0)
+    #r o
+    wurfel_create(2,6,6)
+    
+    #Fläche 5
+    #l u
+    wurfel_create(2,0,0)
+    #l o
+    wurfel_create(2,0,6)
+    #r u
+    wurfel_create(2,6,0)
+    #r o
+    wurfel_create(2,6,6)
+    #m
+    wurfel_create(2,3,3)
+    
+    #Fläche 4
+    #l u
+    wurfel_create(2,0,0)
+    #l m
+    wurfel_create(2,0,3)    
+    #l o
+    wurfel_create(2,0,6)
+    #r u
+    wurfel_create(2,6,0)
+    #r m
+    wurfel_create(2,6,3)
+    #r o
+    wurfel_create(2,6,6)
+    
     
         
 
