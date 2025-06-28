@@ -1,11 +1,11 @@
 from ota import OTAUpdater
 from WIFI_CONFIG import SSID, PASSWORD
-from MPU6050 import MPU6050
 
-firmware_url = "https://raw.githubusercontent.com/LixTV/Physical_Computing/main/"
+firmware_url = "https://raw.githubusercontent.com/LixTV/Physical_Computing/"
 
-ota_updater = OTAUpdater(SSID, PASSWORD, firmware_url, "test.py")
-ota_updater.download_and_install_update_if_available()
+ota = OTAUpdater(SSID, PASSWORD, firmware_url, "main.py")
+
+ota.download_and_install_update_if_available()
 
 
 import time
@@ -259,3 +259,4 @@ except KeyboardInterrupt:
     pixel.clear()
     pixel.show()
     print("Alle LEDs ausgeschaltet")
+
