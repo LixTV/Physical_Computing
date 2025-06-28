@@ -126,6 +126,14 @@ print("Drücke Ctrl+C zum Beenden")
 # Hauptspiel-Loop
 try:
     while True:
+
+    
+        pixel.set_pixel(cube_C1[0][3][3], (0, 0, 255))
+        pixel.set_pixel(cube_C1[0][3][4], (0, 0, 255))
+        pixel.set_pixel(cube_C1[0][4][3], (0, 0, 255))
+        pixel.set_pixel(cube_C1[0][4][4], (0, 0, 255))
+
+        
         # Beschleunigungsdaten lesen (wie in lage.py - funktioniert!)
         accel_values = lsm.accel()
         accel_x, accel_y, accel_z = accel_values
